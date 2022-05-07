@@ -28,30 +28,13 @@ output "server_ids" {
 }
 
 output "server_id_and_pub_ip" {
-    description = "More complex way to show together different attributes of the set of instances created using count"
     value = [
         for idx in range(var.num_instances): 
           format("id %s - pub IP : %s", aws_instance.test[idx].id, aws_instance.test[idx].public_ip)
     ]
 }
 
-output "subnet_and_priv_ip" {
-    description = "Same as above this time mapping subnet and private_ip"
-    value = [
-        for idx in range(var.num_instances): 
-          format("id %s - pub IP : %s", aws_instance.test[idx].subnet_id, aws_instance.test[idx].private_ip)
-    ]
-}
-
-output "index_and_pub_ip" {
-    description = "More concise but less powerful (only shows index in the splat)"
-    value = [
-        for index, pub_ip in aws_instance.test.*.public_ip :
-          format("id %s - pub IP : %s", index, pub_ip  )
-    ]
-}
-
 output "instance_idx" {
-
+    
     value = range(var.num_instances)
 }
