@@ -6,6 +6,9 @@ resource "aws_instance" "test_vm" {
     associate_public_ip_address = true
     key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.sec_ssh_ping.id]
+    tags = {
+      Name = "basic_ec2"
+    }
 }
 
 # Security group: allow ssh and ICMP ping from allowed external subnets
