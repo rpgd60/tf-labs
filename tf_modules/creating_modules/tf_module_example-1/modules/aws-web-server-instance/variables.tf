@@ -12,7 +12,6 @@ variable "ec2_instance_type" {
 variable "ec2_security_group_name" {
   type    = string
   default = "web_server_sc"
-
 }
 
 variable "ec2_security_group_description" {
@@ -22,8 +21,10 @@ variable "ec2_security_group_description" {
 
 variable "vpc_id" {
   type = string
+  default = null
 }
 
 variable "subnet_id" {
   type = string
+  default = null
 }
