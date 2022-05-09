@@ -18,6 +18,16 @@ data "aws_ami" "amazon_linux2_kernel_5" {
   }
 }
 
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"] # Canonical
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+}
+
 ## Data sources to identify the default vpc and its subnets
 ## https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc
 data "aws_vpc" "def_vpc" {
