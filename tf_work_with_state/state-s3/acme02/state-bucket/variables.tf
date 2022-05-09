@@ -6,17 +6,17 @@ variable "environment" {
 }
 
 variable "project" {
-  description =  "Project Name"
-  type    = string
+  description = "Project Name"
+  type        = string
 }
 
 ## AWS Specific parameters
 variable "region" {
   description = "AWS Region"
-  type = string
+  type        = string
 }
 
 variable "profile" {
   description = "AWS CLI profile to be used by Terraform when performing API calls"
-  type = string
+  type        = string
 }
