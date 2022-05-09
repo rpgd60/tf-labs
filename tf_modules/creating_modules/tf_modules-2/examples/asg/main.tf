@@ -25,6 +25,8 @@ module "asg" {
   min_size           = 1
   max_size           = 1
   enable_autoscaling = false
+  # wrong parameter on purpose to trigger variable validation error in module
+  # health_check_type = "EC8"
 
   subnet_ids        = data.aws_subnets.default.ids
 }

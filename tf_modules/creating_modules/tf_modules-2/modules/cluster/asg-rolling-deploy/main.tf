@@ -8,7 +8,7 @@ terraform {
     }
   }
 }
-
+## Currently, AWS recommends using launch templates (mainly due to vesioning)
 resource "aws_launch_configuration" "example" {
   image_id        = var.ami
   instance_type   = var.instance_type
