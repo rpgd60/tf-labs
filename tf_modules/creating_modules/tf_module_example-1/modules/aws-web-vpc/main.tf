@@ -38,7 +38,7 @@ resource "aws_route_table" "web_server_rt" {
   }
 }
 
-resource "aws_route_table_association" "web_server_rt_assoscation" {
+resource "aws_route_table_association" "web_server_rt_association" {
   subnet_id      = aws_subnet.web_server_subnet.id
   route_table_id = aws_route_table.web_server_rt.id
 }
