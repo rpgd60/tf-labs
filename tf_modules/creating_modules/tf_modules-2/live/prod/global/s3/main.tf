@@ -2,9 +2,9 @@ locals {
   ## for troubleshooting
   account_id = data.aws_caller_identity.current.account_id
 }
-
+# Account ID included to help make the bucket name globally unique
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "tf-state-${var.project}-${var.environment}"
+  bucket = "tf-state-${local.account_id}-${var.project}-${var.environment}"
 
   #  Protect against bucket deletion - uncomment when ready 
       lifecycle {
