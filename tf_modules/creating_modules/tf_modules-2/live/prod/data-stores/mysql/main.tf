@@ -26,6 +26,8 @@ module "mysql" {
 
   db_name     = var.db_name
   db_id_prefix = "${var.project}-prod-"
+  ## (RP) At this stage, the passwords will be requested on the console when running terraform plan/apply
+  ## (RP) TODO - integrate at the module level with AWS secrets manager
   db_username = var.db_username
   db_password = var.db_password
 }

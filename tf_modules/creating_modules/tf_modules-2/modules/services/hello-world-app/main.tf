@@ -20,6 +20,7 @@ module "asg" {
 
   user_data     = templatefile("${path.module}/user-data.sh", {
     server_port = var.server_port
+    ## (RP) get DB info
     db_address  = data.terraform_remote_state.db.outputs.address
     db_port     = data.terraform_remote_state.db.outputs.port
     server_text = var.server_text
@@ -76,6 +77,7 @@ resource "aws_lb_listener_rule" "asg" {
   }
 }
 
+#(RP) this is were the hello-world picks the db info
 data "terraform_remote_state" "db" {
   backend = "s3"
 

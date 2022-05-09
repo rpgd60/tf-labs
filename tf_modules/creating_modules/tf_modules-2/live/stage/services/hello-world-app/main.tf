@@ -28,6 +28,10 @@ module "hello_world_app" {
   server_text = var.server_text
 
   environment            = var.environment
+  ## (RP) The hello-world-app  has no visibility of the data-stores/mysql
+  ## (RP) but it needs to know the database parameters 
+  ## (RP) We "link" them through the state files (in this case S3) 
+  ## (RP) passing these variables will allow this module to obtain the db parameters fom the mysql state
   db_remote_state_bucket = var.db_remote_state_bucket
   db_remote_state_key    = var.db_remote_state_key
 
