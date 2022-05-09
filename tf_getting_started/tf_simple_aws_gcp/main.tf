@@ -14,7 +14,7 @@ resource "aws_instance" "test_vm" {
 # Security group: allow ssh and ICMP ping from allowed external subnets
 resource "aws_security_group" "sec_ssh_ping" {
   vpc_id = data.aws_vpc.def_vpc.id
-  name   = "sec_ssh_ping"
+  name   = "sec_ssh_ping-1"
   ingress {
     description = "SSH from specific addresses"
     from_port   = 22

@@ -25,7 +25,8 @@ resource "aws_instance" "test_vm" {
   instance_type               = "t2.micro"
   associate_public_ip_address = true
   key_name                    = "tf-course"
-  vpc_security_group_ids      = ["sg-046e7328c8c8afc63"] # Pre-created security group
+  # vpc_security_group_ids      = ["sg-046e7328c8c8afc63"] # Pre-created security group
+  vpc_security_group_ids = ["sg-06f2dded043e263c5"] # Pre-created security group
   tags = {
     Name = "super_basic"
   }
