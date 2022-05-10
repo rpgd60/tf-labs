@@ -1,5 +1,7 @@
 ## AMIs 
-
+## Roughly the equivalent of the following aws cli query
+## aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn*kernel-5*x86_64*gp2" --query 'Images[*].[Name, OwnerId, State]' --profile tfadmin1
+## 
 data "aws_ami" "amazon_linux2_kernel_5" {
   most_recent = true
   owners      = ["amazon"]
