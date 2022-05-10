@@ -24,7 +24,7 @@ resource "aws_instance" "test1" {
 
 resource "aws_security_group" "sec_web" {
   vpc_id = data.aws_vpc.def_vpc.id
-  name   = "sec-web"
+  name   = "sec-web-${var.project}"
   ingress {
     description = "Temp for testing - SSH from specific addresses"
     from_port   = 22
@@ -58,6 +58,9 @@ resource "aws_security_group" "sec_web" {
   }
   tags = {
     Name = "sec-web"
+  }
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
