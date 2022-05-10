@@ -6,5 +6,4 @@ resource "random_string" "random" {
 
 resource "random_pet" "weird_pets" {
     count = 7
-
 }
