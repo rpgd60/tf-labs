@@ -19,7 +19,7 @@ We also use local variables and/or to help us visualize what we created
 - For example, if we are not getting the AMI we expect (e.g. linux kernel 4.x instead of 5.x) we can output (or put into a local variable) all the info from data.aws_ami.amazon_linux2_kernel_5 and this may help us troubleshoot the filter.
 
 ### Additional exercises
-- Create a VPC by hand simulating a pre-existing VPC (perhaps created by another terraform module).  Add data sources to refer to thi VPC's and its subnets.  Add a test2 instance deployed in the 2nd
+- Create a VPC by hand simulating a pre-existing VPC (perhaps created by another terraform module).  Add data sources to refer to this VPC's and its subnets.  Add a test2 instance deployed in the 2nd
 - Find the availability zones in the current region and add outputs to display them.  Do you need to know the region? 
 
 ### References

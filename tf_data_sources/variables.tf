@@ -12,12 +12,12 @@ variable "project" {
 
 ## AWS Specific parameters
 variable "region" {
-  type = string
+  type    = string
   default = "eu-west-1"
 }
 
 variable "profile" {
-  type = string
+  type    = string
   default = "tfadmin1"
 }
 
@@ -28,7 +28,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  type = string
+  type    = string
   default = "tf-course"
 }
 
