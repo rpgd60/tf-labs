@@ -41,3 +41,4 @@ resource "aws_security_group" "sec_ssh_ping" {
     create_before_destroy = true
   }
 }
+

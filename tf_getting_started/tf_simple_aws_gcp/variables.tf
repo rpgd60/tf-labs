@@ -18,7 +18,7 @@ variable "region" {
 
 variable "profile" {
   type = string
-  default = "tfadmin1"
+  # default = "tfadmin1"
 }
 
 ## EC2 Instance Parameters
