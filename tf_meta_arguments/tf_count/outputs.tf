@@ -51,7 +51,13 @@ output "index_and_pub_ip" {
     ]
 }
 
-output "instance_idx" {
+output "zipped_index_and_pub_ip" {
+  description = "much simpler with zipmap"
+  value = zipmap(aws_instance.test.*.id, aws_instance.test.*.public_ip)
+}
 
+
+output "instance_idx" {
     value = range(var.num_instances)
 }
+
