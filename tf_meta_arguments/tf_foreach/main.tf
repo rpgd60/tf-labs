@@ -4,8 +4,8 @@ locals {
   # server_list = [for i in range(0, var.num_instances) : format("svr-%s", i)]
   server_list = ["accounting", "auditing"]
   num_azs     = length(data.aws_availability_zones.azs.names)
+  useless = "${var.environment}+${var.profile}"
 }
-
 
 resource "aws_instance" "test" {
 for_each = toset(local.server_list)
