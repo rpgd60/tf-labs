@@ -12,12 +12,12 @@ variable "project" {
 
 ## AWS Specific parameters
 variable "region" {
-  type = string
+  type    = string
   default = "eu-west-1"
 }
 
 variable "profile" {
-  type = string
+  type    = string
   default = "tfadmin1"
 }
 
@@ -28,7 +28,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  type = string
+  type    = string
   default = "tf-course"
 }
 
@@ -41,11 +41,11 @@ variable "sec_allowed_external" {
 }
 
 variable "num_instances" {
-  type = number
+  type    = number
   default = 2
 }
 
 variable "create_ansible_hosts" {
-  type = bool
+  type    = bool
   default = false
 }

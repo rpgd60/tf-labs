@@ -2,15 +2,16 @@
 
 locals {
   server_list = [for i in range(0, var.num_instances) : format("svr-%s", i)]
-  num_azs = length(data.aws_availability_zones.azs.names)
+  num_azs     = length(data.aws_availability_zones.azs.names)
 }
 
 
 resource "aws_instance" "test" {
-  count                  = length(local.server_list)
-  ami                    = data.aws_ami.amazon_linux2_kernel_5.id
-  instance_type          = var.instance_type
-  subnet_id              = data.aws_subnets.def_vpc_subnets.ids[count.index % local.num_azs]
+  count         = length(local.server_list)
+  ami           = data.aws_ami.amazon_linux2_kernel_5.id
+  instance_type = var.instance_type
+  # subnet_id              = data.aws_subnets.def_vpc_subnets.ids[count.index % local.num_azs]
+  subnet_id              = element(data.aws_subnets.def_vpc_subnets.ids, count.index)
   vpc_security_group_ids = [aws_security_group.sec_web.id]
   key_name               = var.key_name
   tags = {
@@ -23,7 +24,7 @@ resource "aws_instance" "test" {
 
 resource "aws_security_group" "sec_web" {
   vpc_id = data.aws_vpc.def_vpc.id
-  name   = "sec-web"
+  name   = "sec-web-${var.project}"
   ingress {
     description = "Temp for testing - SSH from specific addresses"
     from_port   = 22
