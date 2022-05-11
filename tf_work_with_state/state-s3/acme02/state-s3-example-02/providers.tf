@@ -9,11 +9,12 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "acme02-terraform-state-dev"
+    bucket         = "acme02-terraform-state-044858806836-dev"
     key            = "acme02/example-02/terraform.tfstate" ## Note key is application specific
     dynamodb_table = "acme02-terraform-state-locks-dev"
     region         = "eu-west-1"
     encrypt        = true
+    profile        = "tfadmin1"
   }
 }
 

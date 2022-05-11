@@ -1,6 +1,6 @@
 Lab Terraform Modules - Example 1
 
-Example creating to simple but complete modules
+Example creating simple but complete modules
 - vpc
 - web server instances
 

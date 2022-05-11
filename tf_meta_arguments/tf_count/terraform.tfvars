@@ -10,5 +10,5 @@ instance_type = "t2.micro"
 sec_allowed_external = ["0.0.0.0/0"]
 key_name             = "tf-course"
 
-num_instances        = 6
+num_instances        = 4
 create_ansible_hosts = false

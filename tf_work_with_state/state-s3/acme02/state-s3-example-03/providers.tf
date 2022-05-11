@@ -4,13 +4,13 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.6" 
+      version = ">= 4.6"
     }
   }
 
-backend "s3" {
+  backend "s3" {
     ## Note key is application specific
-    key  = "acme02/example-03/terraform.tfstate"  
+    key = "acme02/example-03/terraform.tfstate"
   }
 }
 
