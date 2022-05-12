@@ -12,3 +12,8 @@ output "subnet_cidr" {
   description = "CIDR of the subnet"
   value       = aws_subnet.web_server_subnet.cidr_block
 }
+
+output "web_sec_group" {
+  description = "Id of vpc security group"
+  value = aws_security_group.web_server_sc.id
+}

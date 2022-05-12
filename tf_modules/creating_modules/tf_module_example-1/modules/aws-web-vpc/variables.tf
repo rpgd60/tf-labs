@@ -33,3 +33,14 @@ variable "rt_name" {
   type    = string
   default = "web_server_rt"
 }
+
+variable "security_group_name" {
+  type    = string
+  default = "web_server_sc"
+}
+
+variable "security_group_description" {
+  type    = string
+  default = "Allow traffic for webserver"
+}
+

@@ -13,12 +13,17 @@ output "subnet_cidr" {
   value       = module.aws_web_vpc.subnet_cidr
 }
 
-output "instance_id" {
+output "web1_instance_id" {
   description = "ID of EC2 instance"
-  value       = module.aws_web_server_instance.instance_id
+  value       = module.web1.instance_id
 }
 
-output "instance_public_ip" {
+output "web2_instance_id" {
+  description = "ID of EC2 instance"
+  value       = module.web2.instance_id
+}
+
+output "web1_public_ip" {
   description = "Public IP of EC2 instance"
-  value       = module.aws_web_server_instance.instance_public_ip
+  value       = module.web1.instance_public_ip
 }
