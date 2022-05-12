@@ -69,3 +69,8 @@ output "instance_idx" {
   value = range(var.num_instances)
 }
 
+output "dns_names" {
+  value = aws_instance.test[*].public_dns
+
+}
+
