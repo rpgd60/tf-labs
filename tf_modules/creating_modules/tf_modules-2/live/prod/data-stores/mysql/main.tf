@@ -9,16 +9,18 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "tf-state-acme99-prod"
+    bucket         = "tf-state-044858806836-acme99-prod"
     key            = "data-stores/terraform.tfstate"
     region         = "eu-west-1"
     dynamodb_table = "tf-state-lock-acme99-prod"
     encrypt        = true
+    profile = "tfadmin1"
   }
 }
 
 provider "aws" {
   region = "eu-west-1"
+  profile = "tfadmin1"
 }
 
 module "mysql" {
