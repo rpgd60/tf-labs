@@ -1,4 +1,18 @@
+## AWS Specific parameters
+
+variable "region" {
+  type = string
+  default = "eu-west-1"
+}
+
+variable "profile" {
+  type = string
+  default = "tfadmin1"
+}
+
+
 ## Environment and Project
+
 variable "environment" {
   type        = string
   description = "e.g. test dev prod"
@@ -10,18 +24,9 @@ variable "project" {
   default = "acme99"
 }
 
-## AWS Specific parameters
-variable "region" {
-  type = string
-  default = "eu-west-1"
-}
-
-variable "profile" {
-  type = string
-  default = "tfadmin1"
-}
 
 ## EC2 Instance Parameters
+
 variable "instance_type" {
   type    = string
   default = "t2.micro"
