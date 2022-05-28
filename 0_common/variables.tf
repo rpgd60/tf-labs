@@ -24,6 +24,16 @@ variable "project" {
   default = "acme99"
 }
 
+## VPC parameters
+variable "vpc_cidr" {
+  type = string
+  default = "10.99.0.0/16"
+  validation {
+    condition = can(cidrnetmask(var.vpc_cidr))   ## Needs work
+    error_message = "Invalid CIDR for VPC."
+  }
+}
+
 
 ## EC2 Instance Parameters
 
