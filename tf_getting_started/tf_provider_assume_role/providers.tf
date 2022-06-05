@@ -2,7 +2,7 @@ locals {
   assumed_role_child_account = "arn:aws:iam::${var.child_account_number}:role/${var.child_account_role}"
 }
 terraform {
-  required_version = "~> 1.1.0"
+  required_version = "~> 1.2.0"
 
   required_providers {
     aws = {
@@ -20,10 +20,11 @@ provider "aws" {
   }
   default_tags {
     tags = {
-      environment = var.environment
-      project     = var.project
+      "${var.company}:environment" = var.environment
+      "${var.company}:project"     = var.project
       created_by  = "terraform"
       disposable  = true
     }
   }
 }
+

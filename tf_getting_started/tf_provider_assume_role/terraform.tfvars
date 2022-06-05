@@ -9,7 +9,8 @@ child_account_role = "OrganizationAccountAccessRole"
 
 region             = "eu-west-1"
 
-project     = "acme02"
+company = "acme"
+project     = "proj02"
 environment = "dev"
 
 

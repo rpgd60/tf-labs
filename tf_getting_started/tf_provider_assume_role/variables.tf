@@ -1,4 +1,11 @@
 ## Environment and Project
+
+variable "company" {
+  type = string
+  description = "company name - will be used in tags"
+  default = "acme"
+}
+
 variable "environment" {
   type        = string
   description = "e.g. test dev prod"
@@ -7,7 +14,7 @@ variable "environment" {
 
 variable "project" {
   type    = string
-  default = "acme99"
+  default = "proj99"
 }
 
 ## AWS Specific parameters

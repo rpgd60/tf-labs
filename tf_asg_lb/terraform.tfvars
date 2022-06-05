@@ -1,7 +1,8 @@
 profile = "tfadmin1"
 region  = "eu-west-1"
 
-project     = "acme02"
+company = "acme"
+project     = "acme-asg"
 environment = "dev"
 
 ## App and instance info

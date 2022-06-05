@@ -1,10 +1,10 @@
 terraform {
-  required_version = "~> 1.1.0"
+  required_version = "~> 1.2.0"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.6" # v3.38.0 minimal version to use default tags
+      version = ">= 4.13" # v3.38.0 minimal version to use default tags
     }
   }
 }
@@ -14,8 +14,8 @@ provider "aws" {
   profile = var.profile
   default_tags {
     tags = {
-      environment = var.environment
-      project     = var.project
+      "${var.company}:environment" = var.environment
+      "${var.company}:project"     = var.project
       created_by  = "terraform"
       disposable  = true
     }

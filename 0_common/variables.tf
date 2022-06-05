@@ -12,7 +12,11 @@ variable "profile" {
 
 
 ## Environment and Project
-
+variable "company" {
+  type = string
+  description = "company name - will be used in tags"
+  default = "acme"
+}
 variable "environment" {
   type        = string
   description = "e.g. test dev prod"
@@ -34,7 +38,6 @@ variable "vpc_cidr" {
   }
 }
 
-
 ## EC2 Instance Parameters
 
 variable "instance_type" {
@@ -52,7 +55,12 @@ variable "key_name" {
 variable "sec_allowed_external" {
   description = "CIDRs from which access is allowed"
   type        = list(string)
-  default     = ["0.0.0.0/10", "0.0.0.0/10"]
+  default     = ["0.0.0.0/0"]
 }
 
+## ECS Parameters
+variable "container_port" {
+  type = string
+  
+}
 
